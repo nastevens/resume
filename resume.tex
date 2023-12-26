@@ -1,0 +1,243 @@
+\documentclass[10pt, letterpaper]{developercv}
+\usepackage{enumitem}
+\usepackage{setspace}
+
+\begin{document}
+
+\setlist{nosep}
+\setlist{leftmargin=1.5em}
+\setstretch{1.1}
+\raggedright
+
+
+%----------------------------------------------------------------------------------------
+% Title and Contact Info
+%----------------------------------------------------------------------------------------
+
+\begin{cvminipage}{0.35}
+    \HUGE{\MakeUppercase{\textbf{Nick\\Stevens}}}
+\end{cvminipage}
+\begin{cvminipage}{0.28}
+    \icon{MapMarker}{12}{Brooklyn Center, MN}\\
+    \icon{Phone}{12}{(651) 402-1610}
+\end{cvminipage}
+\begin{cvminipage}{0.35}
+    \icon{At}{12}{\href{mailto:nickastevens83@gmail.com}{nickastevens83@gmail.com}}\\
+    \icon{Github}{12}{\href{https://github.com/nastevens}{github.com/nastevens}}
+\end{cvminipage}
+\vspace{3ex}
+
+
+%----------------------------------------------------------------------------------------
+% Introduction and Skills
+%----------------------------------------------------------------------------------------
+
+\begin{cvminipage}{0.5}
+    \cvsect{Introduction}
+    Experienced software engineer with deep knowledge of network-connected
+    embedded devices and associated back-end cloud services. Linux expert.
+    Knowledgable in hardware and PCB design for embedded product development.
+\end{cvminipage}
+\hfill
+\begin{cvminipage}{0.45}
+    \cvsect{Skills}
+    \begin{cvminipage}{0.3}
+        \begin{itemize}[nosep]
+            \item Rust
+            \item Yocto
+            \item Python
+            \item C/C++
+            \item Shell
+        \end{itemize}
+    \end{cvminipage}
+    \hfill
+    \begin{cvminipage}{0.3}
+        \begin{itemize}[nosep]
+            \item Lua
+            \item JavaScript
+            \item Terraform
+            \item Java
+            \item Groovy
+        \end{itemize}
+    \end{cvminipage}
+    \hfill
+    \begin{cvminipage}{0.3}
+        \begin{itemize}[nosep]
+            \item AWS
+            \item Android
+            \item \LaTeX
+            \item Git
+        \end{itemize}
+    \end{cvminipage}
+\end{cvminipage}
+\vspace{3ex}
+
+
+%----------------------------------------------------------------------------------------
+% Experience
+%----------------------------------------------------------------------------------------
+
+\cvsect{Experience}
+\begin{entrylist}
+    \entry
+        {2016 -- 2023}
+        {Samsung SmartThings}
+        {Senior Staff Software Engineer}
+        {%
+            \texttt{Rust}\slashsep
+            \texttt{C}\slashsep
+            \texttt{Python}\slashsep
+            \texttt{Yocto}\slashsep
+            \texttt{Shell}\slashsep
+            \texttt{Lua}\slashsep
+            \texttt{AWS + Terraform}
+            \begin{itemize}[nosep]
+                \item Designed and implemented secure firmware update server
+                    and client for Hub products, written in 100\% Rust. Server
+                    was extremely efficient, running at a fraction of the cost
+                    of other SmartThings cloud services, while maintaining very
+                    high uptime with no unplanned outages in 6 years.
+                \item Wrote Yocto recipes for building the Hub firmware
+                    operating system, including advanced classes for automating
+                    firmware image encryption and signing.
+                \item Performed board bring-up for Hub 2018 model, including
+                    U-boot and Linux kernel customization work.
+                \item Implemented full-disk encryption and hardware-backed
+                    secure boot setup for Hubs.
+                \item Created a streaming log encryption and compression tool
+                    for securely retrieving logs from hubs. Open-sourced the
+                    encryption envelope format as Saltlick at
+                    \href{https://github.com/saltlick-crypto}{github.com/saltlick-crypto}
+                \item Replaced outdated and buggy Hub manufacturing tools with
+                    streamlined tool created in Python for Hub 2015 and 2018
+                    models.
+                \item Overhauled CMake build of primary Hub application to
+                    provide easy cross-compilation of mixed C, C++, and Rust
+                    codebase.
+                \item Wrote numerous Hub system utilities in Rust and Shell.
+                \item Stood up containerized infrastructure in AWS Elastic
+                    Container Service (ECS) with Jenkins CI to run heavyweight
+                    Yocto builds automatically.
+                \item Created in-depth technical proposals and documentation
+                    for all of the above.
+            \end{itemize}
+        }
+    \entry
+        {2014 -- 2016}
+        {Digi Wireless Design Services}
+        {Senior Software Engineer}
+        {%
+            \texttt{C}\slashsep
+            \texttt{Python}\slashsep
+            \texttt{Yocto}
+            \begin{itemize}[nosep]
+                \item Developed Yocto-based Linux board support package for
+                    Freescale ARM7 board.
+                \item Wrote Linux kernel RS-485 driver for Freescale i.MX28
+                    processor.
+                \item Back-ported Linux Bluetooth drivers from kernel 3.17 to
+                    3.14.
+                \item Submitted Linux kernel bug patch for MCP3021 analog
+                    to digital converter (SHA 347d7e45).
+                \item Wrote platform-independent implementation of \texttt{expect}
+                    library in Python with full support for Unicode and binary
+                    data.
+            \end{itemize}
+        }
+    \entry
+        {2012 -- 2014}
+        {QiG Group (c/o Greatbatch)}
+        {Firmware Engineer}
+        {%
+            \texttt{C}\slashsep
+            \texttt{C++}\slashsep
+            \texttt{Java}\slashsep
+            \texttt{Groovy}
+            \begin{itemize}[nosep]
+                \item Participated in cross-functional hardware/firmware team
+                    working to re-certify an implantable medical device
+                    acquired by QiG group from a defunct company. Specifically
+                    responsible for a full code audit of the C/C++ firmware
+                    code base.
+                \item Created proof-of-concept Android application for
+                    communicating with custom USB hardware to retrieve data
+                    from the implanted device and upload that data to a cloud
+                    data collection service (written in Python).
+                \item Developed Android application for emulating a limited
+                    Hayes command set and Point-to-Point Protocol (PPP)
+                    implementation to allow a legacy device to communicate over
+                    a cellular modem as if talking to a Bluetooth dial-up
+                    modem.
+            \end{itemize}
+        }
+    \entry
+        {2012 -- 2013}
+        {FPX}
+        {Software Engineer (Contractor)}
+        {%
+            \texttt{C++}\slashsep
+            \texttt{Java}
+            \begin{itemize}[nosep]
+                \item Performed 32-bit to 64-bit conversion of 70,000-line
+                    cross-platform (RedHat Linux and Windows) C++ application
+                    as part of three-person team.
+                \item Rewrote build system based on Borland tools using GNU
+                    Make and MinGW.
+            \end{itemize}
+        }
+    \entry
+        {2009 -- 2012}
+        {ProMetric Systems}
+        {Software Engineer}
+        {%
+            \texttt{LabVIEW}\slashsep\texttt{C}\slashsep\texttt{Java}\slashsep\texttt{Verilog}
+            \begin{itemize}[nosep]
+                \item Created serial communication wedge using Verilog and a
+                    Spartan 3 FPGA to bridge a standard PC USB port to five
+                    serial busses (Two \iic{} busses, a One-Wire bus, and two
+                    proprietary serial busses).
+                \item Worked on an agile team implementing and maintaining
+                    LabVIEW-based test platform for simultaneous testing up to
+                    450 rechargeable batteries.
+                \item Wrote and validated Java library for Yokogawa SL1000 DAQ
+                    instrument.
+            \end{itemize}
+        }
+    \entry
+        {2006 -- 2009}
+        {Boston Scientific Cardiac Rhythm Management}
+        {Electrical Engineer, Manufacturing Test}
+        {%
+            \texttt{LabVIEW}\slashsep\texttt{Java}\slashsep\texttt{Python}
+            \begin{itemize}[nosep]
+                \item Developed Java desktop application for easily reading and
+                    displaying data from pacemaker memory dumps.
+                \item Worked with team of developers to create a LabVIEW-based
+                    high voltage test system for implantable cardiac leads.
+                \item Wrote and distributed Excel macros and Python scripts for
+                    processing field return data.
+            \end{itemize}
+        }
+\end{entrylist}
+
+%----------------------------------------------------------------------------------------
+% Education
+%----------------------------------------------------------------------------------------
+
+\cvsect{Education}
+\begin{entrylist}
+    \entry
+        {2001 -- 2006}
+        {Rose-Hulman Institute of Technology}
+        {Bachelor's Degree}
+        {%
+            \texttt{GPA: 3.89}
+            \begin{itemize}[nosep]
+                \item Co-op student for Johnson \& Johnson Consumer Products
+                    for a total of 12 months.
+                \item Teacher's assistant for Digital Design I and II.
+            \end{itemize}
+        }
+\end{entrylist}
+
+\end{document}
