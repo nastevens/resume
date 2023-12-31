@@ -1,0 +1,37 @@
+name: Release latest resume
+
+on:
+  workflow_dispatch:
+
+jobs:
+  compile:
+    uses: ./.github/workflows/compile.yml
+  getdate:
+    runs-on: ubuntu-latest
+    outputs:
+      date: ${{ steps.getdate.outputs.date }}
+    steps:
+      - id: getdate
+        run: echo "date=$(date +'%Y%m%d')" >> $GITHUB_OUTPUT
+  release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    needs: [compile, getdate]
+    env:
+      OUTPUT_NAME: Resume-Nick_Stevens-${{ needs.getdate.outputs.date }}.pdf
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: resume
+      - name: Rename file to include current date
+        run: mv resume.pdf "$OUTPUT_NAME"
+      - name: Create release ${{ needs.getdate.outputs.date }}
+        uses: ncipollo/release-action@v1
+        with:
+          artifacts: ${{ env.OUTPUT_NAME }}
+          artifactContentType: application/pdf
+          allowUpdates: true
+          makeLatest: true
+          name: ${{ needs.getdate.outputs.date }}
+          tag: v${{ needs.getdate.outputs.date }}

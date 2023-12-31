@@ -1,0 +1,29 @@
+name: Compile resume
+
+on:
+  push:
+  workflow_call:
+  workflow_dispatch:
+
+jobs:
+  compile:
+    name: Compile resume to PDF
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/cache@v3
+        name: Cache tectonic files
+        with:
+          path: ~/.cache/Tectonic
+          key: ${{ runner.os }}-tectonic-${{ hashFiles('**/*.tex') }}
+          restore-keys: |
+            ${{ runner.os }}-tectonic-
+      - uses: wtfjoke/setup-tectonic@v3
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+      - run: tectonic resume.tex
+      - uses: actions/upload-artifact@v4
+        with:
+          name: resume
+          path: resume.pdf
+          if-no-files-found: error
